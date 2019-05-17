@@ -14,7 +14,7 @@ class QuanshuPipeline(object):
     def __init__(self):
         dbName = MongoDBname             # 给数据库添加名字
         client = MongoClient()           # 创建连接对象client
-        db = client[dbName]              # 使用='datago306'的数据库
+        db = client[dbName]              # 使用的数据库
         self.post = db[MongoItem]
 
     def process_item(self, item, spider):
