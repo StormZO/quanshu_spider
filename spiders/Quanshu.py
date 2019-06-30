@@ -24,7 +24,7 @@ class QuanshuSpider(RedisSpider):
             )
 
     def parse_detail(self, response):    # 主要获取小说的name,author，和next_url
-        items = deepcopy(response.meta['items'])
+        items = response.meta['items']
         li_list = response.xpath("//ul[contains(@class,'seeWell')]/li")
         for li in li_list:              # 循环获取每一本小说的信息
             book_href = li.xpath("./a/@href").extract_first()      #小说链接
